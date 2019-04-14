@@ -1,18 +1,18 @@
 To access your instance:
 
     Open an SSH client. (find out how to connect using PuTTY)
-    Locate your private key file (awsKey.pem). The wizard automatically detects the key you used to launch the instance.
+    Locate your private key file (ubuntuKey2.pem). The wizard automatically detects the key you used to launch the instance.
     Your key must not be publicly viewable for SSH to work. Use this command if needed:
 
-    chmod 400 awsKey.pem
+    chmod 400 ubuntuKey2.pem
 
     Connect to your instance using its Public DNS:
 
-    ec2-3-16-81-144.us-east-2.compute.amazonaws.com
+    ec2-3-16-129-59.us-east-2.compute.amazonaws.com
 
 Example:
 
-ssh -i "awsKey.pem" ec2-user@ec2-3-16-81-144.us-east-2.compute.amazonaws.com
+ssh -i "ubuntuKey2.pem" ubuntu@ec2-3-16-129-59.us-east-2.compute.amazonaws.com
 
 Please note that in most cases the username above will be correct, however please ensure that you read your AMI usage instructions to ensure that the AMI owner has not changed the default AMI username.
 If you need any assistance connecting to your instance, please see our connection documentation.
