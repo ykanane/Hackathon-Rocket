@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hackathon Test Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  		<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+		<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
+    
+  
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      border-color: #555555;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    
+    .page-header{
+      padding:0;
+      margin:0;
+    }
+    
+    .goToTop {
+      position: fixed;
+      top: 0;
+      width:100%;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container-fluid page-header">
+    <img src="Apartments.png" id="hPic" style="width:100%; height:auto; margin:0 auto; padding:0;">
+  </div>
+  
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header col-sm-2 nopadding">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">Website Name</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="#">Pay Sharing</a></li>
+          <li><a href="#">Roomate Matching Service</a></li>
+          <li><a href="#">Landlord Matching Service</a></li>
+          <li><a href="#">Personal Information</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+  <div class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+        <img src="icon.png" style="width:100px; height:auto; margin:0 auto; padding:0;">
+        <p><a href="#">Link</a></p>
+        <p><a href="#">Link</a></p>
+        <p><a href="#">Link</a></p>
+      </div>
+      <div class="col-sm-8 text-center" style="padding-top:20px"> 
+        <h1>This Month's Rent Share</h1>
+        <p><font size=5>$700</font></p>
+        
+        <div class="row">
+          <div id = "paySplit" class="col-sm-6"></div>
+          <div id = "currentPayments" class="col-sm-6"></div>
+        </div>
+      </div>
+      <div class="col-sm-2 sidenav">
+        <div class="well">
+          <p>ADS</p>
+        </div>
+        <div class="well">
+          <p>ADS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="container-fluid text-center">
+    <p>Footer Text</p>
+  </footer>
+  
+  <script src="js/Pay Split Chart.js"></script>
+  <script src="js/Current Payments.js"></script>
+
+  <script>
+    $(document).ready(function() {
+        $(window).bind('scroll', function() {
+            var navHeight = document.getElementById('hPic').clientHeight;
+            (($(window).scrollTop() > navHeight)
+            ?
+            $('nav').addClass('goToTop')
+            :
+            $('nav').removeClass('goToTop'));
+        });
+      });
+  </script>
+  
+  <script>
+  document.body.classList.add('js-loading');
+
+  window.addEventListener("load", showPage);
+
+  function showPage() {
+  document.body.classList.remove('js-loading');
+  }
+  </script>
+</body>
+</html>
